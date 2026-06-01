@@ -1,0 +1,7 @@
+{
+    "project": "real-time-data-lakehouse",
+    "type": "throughput",
+    "thresholds": {
+        "events_per_sec_min": 10000
+    }
+}

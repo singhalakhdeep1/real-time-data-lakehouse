@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: real-time-data-lakehouse-worker
+  namespace: staging
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: real-time-data-lakehouse-worker
+  template:
+    metadata:
+      labels:
+        app: real-time-data-lakehouse-worker
+    spec:
+      containers:
+        - name: worker
+          image: ghcr.io/alakhdeepsingh/real-time-data-lakehouse:staging
+          command: ["python", "jobs/run_local_demo.py"]

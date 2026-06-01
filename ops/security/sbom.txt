@@ -1,0 +1,57 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: real-time-data-lakehouse
+DocumentNamespace: https://github.com/Alakhdeepsingh/real-time-data-lakehouse/sbom-v1.0.0
+Creator: Tool: ops/security/dependency_scan.py
+Creator: Organization: Alakhdeepsingh
+Created: 2025-06-01T00:00:00Z
+
+## Runtime Dependencies
+
+PackageName: Python
+SPDXID: SPDXRef-Package-Python
+PackageVersion: 3.12
+PackageSupplier: Organization: Python Software Foundation
+PackageLicenseConcluded: PSF-2.0
+PackageDownloadLocation: https://www.python.org/downloads/release/python-3120/
+FilesAnalyzed: false
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python:3.12.0:*:*:*:*:*:*:*
+
+## Standard Library Modules Used (no third-party runtime deps)
+
+PackageName: json
+SPDXID: SPDXRef-Package-json-stdlib
+PackageVersion: 3.12 (stdlib)
+PackageLicenseConcluded: PSF-2.0
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+
+PackageName: pathlib
+SPDXID: SPDXRef-Package-pathlib-stdlib
+PackageVersion: 3.12 (stdlib)
+PackageLicenseConcluded: PSF-2.0
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+
+PackageName: threading
+SPDXID: SPDXRef-Package-threading-stdlib
+PackageVersion: 3.12 (stdlib)
+PackageLicenseConcluded: PSF-2.0
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+
+PackageName: time
+SPDXID: SPDXRef-Package-time-stdlib
+PackageVersion: 3.12 (stdlib)
+PackageLicenseConcluded: PSF-2.0
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+
+## Relationships
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-Python
+Relationship: SPDXRef-Package-Python DYNAMIC_LINK SPDXRef-Package-json-stdlib
+Relationship: SPDXRef-Package-Python DYNAMIC_LINK SPDXRef-Package-pathlib-stdlib
+Relationship: SPDXRef-Package-Python DYNAMIC_LINK SPDXRef-Package-threading-stdlib
+Relationship: SPDXRef-Package-Python DYNAMIC_LINK SPDXRef-Package-time-stdlib

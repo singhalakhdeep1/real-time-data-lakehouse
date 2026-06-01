@@ -1,0 +1,14 @@
+{
+  "session_mart": [
+    {
+      "events": 1,
+      "user_id": "u_1",
+      "session_id": "s_1"
+    },
+    {
+      "events": 2,
+      "user_id": "u_1",
+      "session_id": "s_2"
+    }
+  ]
+}

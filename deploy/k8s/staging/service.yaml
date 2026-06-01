@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: real-time-data-lakehouse-worker
+  namespace: staging
+spec:
+  selector:
+    app: real-time-data-lakehouse-worker
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: ClusterIP

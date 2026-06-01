@@ -1,0 +1,17 @@
+groups:
+  - name: real-time-data-lakehouse-alerts
+    rules:
+      - alert: IngestionLagHigh
+        expr: max(stream_ingestion_lag_seconds{job="real-time-data-lakehouse"}) > 120
+        for: 10m
+        labels:
+          severity: critical
+        annotations:
+          summary: Streaming ingestion lag is too high
+      - alert: PipelineFailureRate
+        expr: rate(pipeline_failures_total{job="real-time-data-lakehouse"}[15m]) > 0.02
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: Pipeline failure rate exceeded threshold

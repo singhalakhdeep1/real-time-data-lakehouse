@@ -1,0 +1,3 @@
+{"event_type": "signup_completed", "user_id": "u_1", "session_id": "s_1", "occurred_at": "2026-06-01T10:00:00Z", "event_version": "1.0", "source": "sample-producer"}
+{"event_type": "checkout_started", "user_id": "u_1", "session_id": "s_2", "occurred_at": "2026-06-01T10:05:00Z", "event_version": "1.0", "source": "sample-producer"}
+{"event_type": "payment_succeeded", "user_id": "u_1", "session_id": "s_2", "occurred_at": "2026-06-01T10:06:00Z", "event_version": "1.0", "source": "sample-producer"}

@@ -1,0 +1,44 @@
+name: Real Time Data Lakehouse CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pipeline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run local demo
+        working-directory: jobs
+        run: python run_local_demo.py
+
+      - name: Run tests
+        run: python -m unittest discover -s jobs/tests -p "test_*.py"
+
+      - name: Run load test
+        run: python ops/loadtest/run_load_test.py
+
+      - name: Upload load test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-time-data-lakehouse-loadtest-report
+          path: ops/loadtest/loadtest_report.json
+          if-no-files-found: error
+
+      - name: Validate SLO thresholds
+        run: python ops/perf/validate_slo.py
+
+      - name: Upload SLO validation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-time-data-lakehouse-slo-validation-report
+          path: ops/perf/slo_validation_report.json
+          if-no-files-found: error

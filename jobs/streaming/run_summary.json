@@ -1,0 +1,7 @@
+{
+  "input_events": 3,
+  "enriched_events": 3,
+  "sessions_built": 2,
+  "bronze_output": "D:\\Projects\\real-time-data-lakehouse\\jobs\\streaming\\bronze_events.ndjson",
+  "gold_output": "D:\\Projects\\real-time-data-lakehouse\\jobs\\streaming\\gold_session_mart.json"
+}

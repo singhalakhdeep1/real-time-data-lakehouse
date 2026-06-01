@@ -1,0 +1,8 @@
+{
+  "workload": "event_enrichment",
+  "input_batch_size": 3,
+  "iterations": 5000,
+  "events_processed": 15000,
+  "duration_sec": 0.01,
+  "events_per_sec": 2669086.64
+}
