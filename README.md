@@ -64,3 +64,9 @@ Generated artifacts:
 cd jobs/tests
 python -m unittest discover -s . -p "test_*.py"
 ```
+
+---
+
+## License
+
+Proprietary - All rights reserved.
