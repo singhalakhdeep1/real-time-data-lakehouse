@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: events
+        description: Raw e-commerce events ingested from the streaming pipeline
+        columns:
+          - name: event_id
+            tests:
+              - unique
+              - not_null
+          - name: event_type
+            tests:
+              - not_null
+          - name: user_id
+            tests:
+              - not_null
+          - name: session_id
+            tests:
+              - not_null
+          - name: occurred_at
+            tests:
+              - not_null

@@ -1,0 +1,16 @@
+name: real_time_lakehouse
+version: "1.0.0"
+config-version: 2
+
+profile: lakehouse
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  real_time_lakehouse:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
